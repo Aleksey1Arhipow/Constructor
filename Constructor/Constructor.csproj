@@ -52,6 +52,7 @@
     <Compile Include="Avtorization.Designer.cs">
       <DependentUpon>Avtorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB.cs" />
     <Compile Include="Main_menu.cs">
       <SubType>Form</SubType>
     </Compile>
