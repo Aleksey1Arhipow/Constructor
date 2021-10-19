@@ -11,7 +11,7 @@ namespace Constructor
 {
     class DB
     {
-        public SqlConnection con = new SqlConnection();
+        public SqlConnection con = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Constructor;Integrated Security=True");
 
         public void OpenConnection()
         {
