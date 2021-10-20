@@ -49,6 +49,7 @@ namespace Constructor
                 if ((i + 1) % 4 == 0)
                 {
                     x = 11; y+=205;
+                    string path = Environment.CurrentDirectory + people[i][2] + ".png";
                     this.Controls["panel1"].Controls.Add(new PictureBox { Name = "photo" + i, Location = new Point(x, y), Size = new Size(136, 125), SizeMode = PictureBoxSizeMode.StretchImage, Image = Image.FromFile(path) });
                     this.Controls["panel1"].Controls.Add(new Label { Name = "lab" + i, Location = new Point(x, y + 137), Text = people[i][1] });
 
