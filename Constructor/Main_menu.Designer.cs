@@ -36,6 +36,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(68, 31);
             this.label1.Name = "label1";
@@ -45,6 +46,7 @@
             // 
             // btn_generate
             // 
+            this.btn_generate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generate.Location = new System.Drawing.Point(41, 84);
             this.btn_generate.Name = "btn_generate";
@@ -55,6 +57,7 @@
             // 
             // txt_num
             // 
+            this.txt_num.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_num.Location = new System.Drawing.Point(41, 52);
             this.txt_num.Name = "txt_num";
             this.txt_num.ReadOnly = true;
@@ -63,6 +66,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(288, 52);
             this.panel1.Name = "panel1";
