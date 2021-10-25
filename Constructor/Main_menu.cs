@@ -65,11 +65,23 @@ namespace Constructor
             }
                 
         }
+
         private void btn_generate_Click(object sender, EventArgs e)
         {
+            
             Random rnd = new Random();
-           int  ch= rnd.Next(0, people.Count - 1);
+           int  ch= rnd.Next(0, people.Count );
             txt_num.Text = ch.ToString();
+            people.RemoveAt(ch);
+            count = people.Count;
+            panel1.Controls.Clear();
+            x = 11; y = 14;
+            ElementCreator();
+            if (count < 2)
+            {
+                foreach (Control con in this.Controls) con.Enabled = false;
+                btn_restart.Enabled = true;
+            }
         }
 
     }
