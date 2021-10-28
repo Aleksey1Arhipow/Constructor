@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_generate = new System.Windows.Forms.Button();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_restart = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btn_add = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +60,6 @@
             this.btn_generate.TabIndex = 1;
             this.btn_generate.Text = "Сгенерировать";
             this.btn_generate.UseVisualStyleBackColor = true;
-            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
             // 
             // txt_num
             // 
@@ -90,43 +91,47 @@
             this.btn_restart.Text = "Начать заново";
             this.btn_restart.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // timer1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(54, 171);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 113);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label2
+            // menuStrip1
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 287);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "имя";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_add});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btn_add
+            // 
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(130, 20);
+            this.btn_add.Text = "Добавить участника";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // Main_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_num);
             this.Controls.Add(this.btn_restart);
             this.Controls.Add(this.btn_generate);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Main_menu";
             this.Text = "Main_menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +144,8 @@
         private System.Windows.Forms.TextBox txt_num;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_restart;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btn_add;
     }
 }

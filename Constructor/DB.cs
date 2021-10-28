@@ -50,7 +50,7 @@ namespace Constructor
 
         }
 
-        public void NonQery(string s)
+        public void NonQuerry(string s)
         {
             OpenConnection();
             SqlCommand com = new SqlCommand(s, GetConnection());

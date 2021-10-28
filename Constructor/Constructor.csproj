@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_people.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_people.Designer.cs">
+      <DependentUpon>Add_people.cs</DependentUpon>
+    </Compile>
     <Compile Include="Avtorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add_people.resx">
+      <DependentUpon>Add_people.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Avtorization.resx">
       <DependentUpon>Avtorization.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
@@ -97,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\pictures\5254456.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

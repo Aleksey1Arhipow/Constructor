@@ -15,8 +15,10 @@ namespace Constructor
     {
         List<string[]> people = new List<string[]>();
         DB db = new DB();
-        int count;
+        int count, count2;
         int x = 11, y = 14;
+        int last = -1;
+        int ch = -1;
         public Main_menu()
         {
             InitializeComponent();
@@ -41,6 +43,23 @@ namespace Constructor
             }
             reader.Close();
             db.CloseConnection();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            count2++;
+            int a = this.Controls["vyb" + ch].Size.Width + 5;
+            int b = this.Controls["vyb" + ch].Size.Height + 5;
+            this.Controls["vyb" + ch].Size = new Size(a,b);
+            if (count2 == 5) timer1.Stop();
+
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            Add_people add = new Add_people();
+            this.Hide();
+            add.Show();
         }
 
         private void ElementCreator()
@@ -68,20 +87,30 @@ namespace Constructor
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-            
             Random rnd = new Random();
-           int  ch= rnd.Next(0, people.Count );
+             ch = rnd.Next(0, people.Count);
             txt_num.Text = ch.ToString();
+
+            Controls.RemoveByKey("vyb" + last);
+            Controls.RemoveByKey("tx" + last);
+            last = ch;
+
+
+            string path = Environment.CurrentDirectory + people[ch][2];
+            this.Controls.Add(new PictureBox { Name = "vyb" + ch, Location = new Point(btn_restart.Location.X, btn_restart.Location.Y+80), Size = new Size(153, 113 ), SizeMode = PictureBoxSizeMode.StretchImage, Image = Image.FromFile(path), Anchor=AnchorStyles.None });
+            this.Controls.Add(new Label { Name = "tx" + ch, Location = new Point(btn_restart.Location.X, btn_restart.Location.Y + 200), Text = people[ch][1], Size = new Size(140, 26) });
             people.RemoveAt(ch);
             count = people.Count;
             panel1.Controls.Clear();
             x = 11; y = 14;
             ElementCreator();
-            if (count < 2)
+            if (count < 1)
             {
                 foreach (Control con in this.Controls) con.Enabled = false;
                 btn_restart.Enabled = true;
+                timer1.Start();
             }
+
         }
 
     }
